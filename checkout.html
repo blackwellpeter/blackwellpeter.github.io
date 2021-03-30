@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <base target="_top">
+
+  <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+  <script type="text/javascript">
+    Paddle.Setup({ vendor: 128626 });
+
+
+  </script>
+
+</head>
+
+<body>
+  <!--checkout-window-->
+  <div id="checkout-window" >
+    <div class="checkout-container"></div>
+
+  </div>
+
+
+  <script type="text/javascript"> 
+
+    const queryString = window.location.search;
+
+    const urlParams = new URLSearchParams(queryString);
+
+    if (urlParams.has('plan') && urlParams.has('email')) {
+
+      var plan =  urlParams.get('plan')
+      var email =  urlParams.get('email')
+
+      Paddle.Checkout.open({
+      method: 'inline',
+      product: plan,
+      email: email, 
+      frameTarget: 'checkout-container'
+        });
+    }
+
+
+</script>
+</body>
+
+</html>
