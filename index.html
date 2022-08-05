@@ -25,8 +25,8 @@
 <!---->
 
 <section class="text-gray-600 body-font">
-  <div class="container mx-auto flex px-5 py-14 items-center justify-center flex-col">
-    <img class="object-cover object-center  rounded-lg" alt="hero" src="Settings.png">
+  <div class="container mx-auto flex px-5 pt-20 pb-4 items-center justify-center flex-col">
+    <img class="object-cover object-center  rounded-lg" alt="hero" src="Settings.png" width="600">
     <div class="text-center mb-20">
       <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-1 py-5">Send text messages from Gmail</h1>
       <p class="text-base leading-relaxed xl:w-3/4 lg:w-3/4 mx-auto text-gray-500s mb-3">Send texts instantly with email to text add-on. We convert your email into a text message and deliver it, with all replies then arriving as emails.</p>
@@ -39,7 +39,59 @@
   </div>
 </section>
 
+<section class="text-gray-600 body-font">
+  <div class="container px-5 pt-4 pb-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-10">
+      <h2 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900 py-5">Pricing</h2>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Upon installation, we provide each user with <b>10 free SMS messages</b> to try out our service.</p>
+    </div>
+    <div class="lg:w-1/2 w-full mx-auto overflow-auto">
+      <table class="table-auto w-full text-left whitespace-no-wrap">
+        <thead>
+          <tr>
+            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">SMS Count</th>
+            <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Price</th>
+                        <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Discount</th>
 
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="px-4 py-3">50 SMS</td>
+            <td class="px-4 py-3">$10</td>
+            <td class="px-4 py-3"></td>
+          </tr>
+          <tr>
+            <td class="border-t-2 border-gray-200 px-4 py-3">250 SMS</td>
+            <td class="border-t-2 border-gray-200 px-4 py-3">$25</td>
+            <td class="border-t-2 border-gray-200 px-4 py-3">Save 50%</td>
+          </tr>
+          <tr>
+            <td class="border-t-2 border-gray-200 px-4 py-3">500 SMS</td>
+            <td class="border-t-2 border-gray-200 px-4 py-3">$40</td>
+            <td class="border-t-2 border-gray-200 px-4 py-3">Save 60%</td>
+          </tr>
+          <tr>
+            <td class="border-t-2 border-gray-200 px-4 py-3">1000 SMS</td>
+            <td class="border-t-2 border-gray-200 px-4 py-3">$70</td>
+            <td class="border-t-2 border-gray-200 px-4 py-3">Save 65%</td>
+          </tr>
+          <tr>
+            <td class="border-t-2 border-gray-200 px-4 py-3">2500 SMS</td>
+            <td class="border-t-2 border-gray-200 px-4 py-3">$150</td>
+            <td class="border-t-2 border-gray-200 px-4 py-3">Save 70%</td>
+          </tr>
+          <tr>
+            <td class="border-t-2 border-gray-200 px-4 py-3">5000 SMS</td>
+            <td class="border-t-2 border-gray-200 px-4 py-3">$250</td>
+            <td class="border-t-2 border-gray-200 px-4 py-3">Save 75%</td>
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
 
 <section class="text-gray-600 body-font">
   <div class="container px-5 py-0 mx-auto">
@@ -186,7 +238,7 @@
       <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Contact Us</h1>
       <p class="lg:w-2/3 mx-auto leading-relaxed text-base">To contact us please submit the form below</p>
     </div>
-    <form action="https://formspree.io/f/xgepbykb" method="POST">
+    <form id = "feedback-form" action="https://us-west2-send-email-to-text.cloudfunctions.net/function_save_feedback_site" old="https://formspree.io/f/xgepbykb" method="POST">
     <div class="lg:w-1/2 md:w-2/3 mx-auto">
       <div class="flex flex-wrap -m-2">
         <div class="p-2 w-1/2">
@@ -214,6 +266,10 @@
       </div>
     </div>
     </form>
+    <div id="thank-for-feedback" class="success flex flex-col text-center w-full mb-12" style="display: none">
+      <p class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">The form was successfully submitted.</p>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Please allow us 24 hours to respond to your message.</p>
+    </div>
   </div>
 </section>
 
@@ -230,7 +286,7 @@
 </svg>
       <span class="ml-3 text">Email to Text</span>
     </a>
-    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021
+    <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022
     </p>
     <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
       <a class="mr-5 hover:text-gray-900" href="privacy.html">Privacy Policy</a>
@@ -241,4 +297,47 @@
 
 
 </body>
+
+<script>
+window.addEventListener( "load", function () {
+  function sendData() {
+    const XHR = new XMLHttpRequest();
+
+    // Bind the FormData object and the form element
+    const FD = new FormData( form );
+
+    // Define what happens on successful data submission
+    XHR.addEventListener( "load", function(event) {
+      // alert( event.target.responseText );
+      const thank = document.getElementById( "thank-for-feedback" );
+      thank.style.display = 'flex'
+      form.style.display = 'none'
+    } );
+
+    // Define what happens in case of error
+    XHR.addEventListener( "error", function( event ) {
+      alert( 'Oops! Something went wrong.' );
+    } );
+
+    // Set up our request
+    XHR.open( "POST", "https://us-west2-send-email-to-text.cloudfunctions.net/function_save_feedback_site" );
+
+    // The data sent is what the user provided in the form
+    XHR.send( FD );
+  }
+
+  // Access the form element...
+  const form = document.getElementById( "feedback-form" );
+
+  // ...and take over its submit event.
+  form.addEventListener( "submit", function ( event ) {
+    event.preventDefault();
+
+    sendData();
+  } );
+} );
+
+
+</script>
+
 </html>
