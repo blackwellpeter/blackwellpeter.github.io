@@ -298,6 +298,8 @@
 
 </body>
 
+
+
 <script>
 window.addEventListener( "load", function () {
   function sendData() {
@@ -333,11 +335,21 @@ window.addEventListener( "load", function () {
   form.addEventListener( "submit", function ( event ) {
     event.preventDefault();
 
-    sendData();
+    grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6LfbX4MhAAAAANZeOR7Ryrxle4Jdu17w0SXAl4Hx', {action: 'feedback'}).then(function(token) {
+      sendData();
+
+        });
+    });
+
+    
   } );
 } );
 
-
 </script>
+
+
+<script src="https://www.google.com/recaptcha/enterprise.js?render=6LfbX4MhAAAAANZeOR7Ryrxle4Jdu17w0SXAl4Hx"></script>
+
 
 </html>
