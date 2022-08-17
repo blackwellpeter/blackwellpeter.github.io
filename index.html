@@ -305,7 +305,6 @@ window.addEventListener( "load", function () {
   function sendData(token) {
     const XHR = new XMLHttpRequest();
 
-    XHR.setRequestHeader("X-Recaptcha-Token", token);
 
 
     // Bind the FormData object and the form element
@@ -326,6 +325,9 @@ window.addEventListener( "load", function () {
 
     // Set up our request
     XHR.open( "POST", "https://us-west2-send-email-to-text.cloudfunctions.net/function_save_feedback_site" );
+
+    XHR.setRequestHeader("X-Recaptcha-Token", token);
+
 
     // The data sent is what the user provided in the form
     XHR.send( FD );
