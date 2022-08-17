@@ -340,13 +340,14 @@ window.addEventListener( "load", function () {
   form.addEventListener( "submit", function ( event ) {
     event.preventDefault();
 
-    grecaptcha.enterprise.ready(function() {
-    grecaptcha.enterprise.execute('6Lfae4MhAAAAAHFjhbaZX4GCZqffztiDWM8gNit0', {action: 'feedback'}).then(function(token) {
-      sendData(token);
+    // grecaptcha.enterprise.ready(function() {
+    // grecaptcha.enterprise.execute('6Lfae4MhAAAAAHFjhbaZX4GCZqffztiDWM8gNit0', {action: 'feedback'}).then(function(token) {
+    //   sendData(token);
 
-        });
-    });
+    //     });
+    // });
 
+    sendData('nonono');
     
   } );
 } );
