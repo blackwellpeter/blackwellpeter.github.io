@@ -240,7 +240,6 @@
     </div>
     <form id = "feedback-form" action="https://sendemailtotext.com/" old="https://formspree.io/f/xgepbykb" method="POST">
     <div class="lg:w-1/2 md:w-2/3 mx-auto">
-      <div id="example3"></div>
       <div class="flex flex-wrap -m-2">
         <div class="p-2 w-1/2">
           <div class="relative">
@@ -261,6 +260,7 @@
           </div>
         </div>
         <div class="p-2 w-full">
+          <div id="example3"></div>
           <button class="flex mx-auto text-white bg-red-500 border-0 py-2 px-8 focus:outline-none hover:bg-red-600 rounded text-lg" type="submit">Submit</button>
         </div>
         
@@ -350,8 +350,7 @@ window.addEventListener( "load", function () {
 
     grecaptcha.render('example3', {
           'sitekey' : '6LdBIIkhAAAAAMV7SK330rxRAX7h4BJHJR0kPSsu',
-          'callback' : sendData,
-          'theme' : 'dark'
+          'callback' : sendData
         });
 
     // sendData('nonono');
