@@ -38,12 +38,25 @@
       var plan =  urlParams.get('plan')
       var email =  urlParams.get('email')
 
+if (urlParams.has('return_url')) {
+      Paddle.Checkout.open({
+      // method: 'inline',
+      product: plan,
+      email: email,
+      success: 'https://sendemailtotext.com/thank-you.html' 
+      // frameTarget: 'checkout-container'
+        });
+} else {
+
       Paddle.Checkout.open({
       // method: 'inline',
       product: plan,
       email: email, 
       // frameTarget: 'checkout-container'
         });
+}
+
+
     }
 
 
